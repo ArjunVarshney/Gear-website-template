@@ -1,0 +1,174 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  transition: all 0.1s;
+}
+body {
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+}
+section {
+  width: 100%;
+  height: 100%;
+}
+.body {
+  height: 100vh;
+  width: 100vw;
+}
+
+#light > svg {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0px;
+  left: 75px;
+  transform: rotate(180deg);
+  font-size: 50px;
+  color: #ffff0059;
+  z-index: 999999;
+  background-color: transparent;
+}
+#light {
+  position: absolute;
+}
+.light {
+  border-radius: 50%;
+  height: 28px;
+  width: 28px;
+  position: absolute;
+  top: 12px;
+  left: 80px;
+  z-index: 99999999999999999;
+}
+.bulb {
+  box-shadow: 0 0 250px 20px #ffff00, 0 0 250px 20px #ffff00,
+    0 0 75px 20px #ffff00, 0 0 100px 20px #ffff00, 0 0 125px 20px #ffff00,
+    0 0 150px 20px #ffff00, 0 0 175px 20px #ffff00, 0 0 1000px 700px #ffff041c;
+  background: yellow;
+}
+
+#back {
+  width: 100%;
+  height: 100%;
+}
+#back .blur {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 1000px 175px black inset;
+  z-index: 10;
+}
+.blur.shadowtoggle {
+  box-shadow: 0 0 1000px 10px black inset !important;
+}
+#back .background > svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 90%;
+  z-index: 1;
+}
+
+/* css of center wheel */
+
+#wheel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: fit-content;
+  width: fit-content;
+  display: grid;
+  place-items: center;
+  z-index: 100;
+}
+.outerframe {
+  position: absolute;
+  display: grid;
+  place-items: center;
+}
+.outerframe .first {
+  height: 300px;
+  width: 300px;
+  background-color: #001aff;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 20px black);
+}
+.outerframe .second {
+  position: absolute;
+  height: 250px;
+  width: 250px;
+  background-color: #210bac;
+  border-radius: 50%;
+  box-shadow: 0 0 15px -5px black inset;
+}
+.second.shadowtoggle {
+  box-shadow: 3px 3px 5px -3px black inset !important;
+}
+.first.shadowtoggle {
+  box-shadow: 5px 5px 5px -3px black !important;
+}
+.center {
+  position: absolute;
+  height: 75px;
+  width: 75px;
+  background-color: #001aff;
+  border-radius: 50%;
+  box-shadow: 0 0 15px -5px black;
+}
+.center.shadowtoggle {
+  box-shadow: 3px 3px 5px -3px black !important;
+}
+.innerholes {
+  position: absolute;
+  height: 230px;
+  width: 230px;
+  display: grid;
+  place-items: center;
+}
+.twoholes {
+  position: absolute;
+  height: 100%;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transform: rotate(calc(120deg * var(--i)));
+}
+.hole {
+  height: 70px;
+  width: 70px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 20px -5px black inset;
+  transform: rotate(calc(-120deg * var(--i)));
+}
+.hole.shadowtoggle {
+  box-shadow: 3px 3px 5px -3px black inset !important;
+}
+.shadowtoggle {
+  filter: drop-shadow(0px 0px 1px black) !important;
+}
+
+/*gear animations are here */
+@keyframes clockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
